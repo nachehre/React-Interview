@@ -11,6 +11,11 @@ import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
   },
+  [`&.${stepConnectorClasses.root}`]: {
+    
+    left: 'calc(50% + 20px)',
+    right: 'calc(-50% + 20px)'
+  },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
       backgroundImage:
