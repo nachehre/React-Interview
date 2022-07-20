@@ -7,34 +7,40 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Confirm from './Confirm';
+import { useContext } from 'react';
+import { AppContext } from '../context/ContextProvider';
+
+
 const FormStep =()=>{
+    const {activeStep}= useContext(AppContext);
+    
     const steps = ['Step1', 'Step2', 'Step3', 'Step4'];
     const handleSteps = (step) => {
         switch (step) {
-          case 1:
+          case 0:
             return <Step1/>
-          case 2:
+          case 1:
             return <Step2/>
-          case 3:
+          case 2:
             return <Step3/>
-          case 4:
+          case 3:
                 return <Confirm/>
           default:
             throw new Error('Unknown step')
         }
       }
-
+    console.log(activeStep)
     return (
         <Stack sx={{ width: '100%' }} spacing={4}>
   
-        <Stepper alternativeLabel activeStep={1} connector={<ColorlibConnector />}>
+        <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
             </Step>
           ))}
         </Stepper>
-        {handleSteps(3)}
+        {handleSteps(activeStep)}
       </Stack>
     );
 }

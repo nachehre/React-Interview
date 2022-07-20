@@ -1,5 +1,13 @@
+import { Button } from "@mui/material";
+import { useContext } from "react";
+import { AppContext } from "../context/ContextProvider";
+
 const Step1=()=>{
-    return <div>Step1</div>
+    const{nextHandler}=useContext(AppContext);
+   
+    return <div>
+                      <Button onClick={nextHandler}> تایید مرحله ی اول</Button>
+           </div>
 }
 
 export default Step1;
