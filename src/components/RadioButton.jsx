@@ -18,9 +18,9 @@ export default function RadioButtonsGroup() {
         name="gender"
         onChange={formOnChangeHandler}
       >
-        <FormControlLabel value="female" control={<Radio />} label="First" />
-        <FormControlLabel value="male" control={<Radio />} label="Second" />
-        <FormControlLabel value="other" control={<Radio />} label="Three" />
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
       </RadioGroup>
     </FormControl>
   );
