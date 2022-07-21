@@ -1,18 +1,22 @@
-import * as React from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import { AppContext } from "../context/ContextProvider";
+import { useContext } from "react";
 
 export default function RadioButtonsGroup() {
+  const { formValueObject, formOnChangeHandler } = useContext(AppContext);
   return (
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">first</FormLabel>
+      <FormLabel id="radio-label-id">female</FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
-        name="radio-buttons-group"
+        labelId="radio-label-id"
+        defaultValue={formValueObject.gender}
+        name="gender"
+        onChange={formOnChangeHandler}
       >
         <FormControlLabel value="female" control={<Radio />} label="First" />
         <FormControlLabel value="male" control={<Radio />} label="Second" />
