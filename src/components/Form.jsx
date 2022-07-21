@@ -5,7 +5,7 @@ import StepLabel from '@mui/material/StepLabel';
 import { ColorlibConnector, ColorlibStepIcon } from './StepperStyle';
 import Step1 from './Step1';
 import Step2 from './Step2';
-import Step3 from './Step3';
+
 import Confirm from './Confirm';
 import { useContext } from 'react';
 import { AppContext } from '../context/ContextProvider';
@@ -14,7 +14,7 @@ import { AppContext } from '../context/ContextProvider';
 const FormStep =()=>{
     const {activeStep}= useContext(AppContext);
     
-    const steps = ['Step1', 'Step2', 'Step3', 'Step4'];
+    const steps = ['Step1', 'Step2', 'Step4'];
     const handleSteps = (step) => {
         switch (step) {
           case 0:
@@ -22,8 +22,7 @@ const FormStep =()=>{
           case 1:
             return <Step2/>
           case 2:
-            return <Step3/>
-          case 3:
+          
                 return <Confirm/>
           default:
             throw new Error('Unknown step')
