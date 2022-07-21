@@ -5,7 +5,6 @@ import StepLabel from '@mui/material/StepLabel';
 import { ColorlibConnector, ColorlibStepIcon } from './StepperStyle';
 import Step1 from './Step1';
 import Step2 from './Step2';
-
 import Confirm from './Confirm';
 import { useContext } from 'react';
 import { AppContext } from '../context/ContextProvider';
@@ -23,12 +22,11 @@ const FormStep =()=>{
             return <Step2/>
           case 2:
           
-                return <Confirm/>
+          return <Confirm/>
           default:
             throw new Error('Unknown step')
         }
       }
-    console.log(activeStep)
     return (
         <Stack sx={{ width: '100%' }} spacing={4}>
   
