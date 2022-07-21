@@ -10,7 +10,7 @@ export default function RadioButtonsGroup() {
   const { formValueObject, formOnChangeHandler } = useContext(AppContext);
   return (
     <FormControl>
-      <FormLabel id="radio-label-id">female</FormLabel>
+      <FormLabel id="radio-label-id">جنسیت خود را انتخاب کنید</FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         labelId="radio-label-id"

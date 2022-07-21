@@ -32,7 +32,7 @@ export default function BasicSelect() {
     }
   };
   return (
-    <Box sx={{ minWidth: 50 }}>
+    <Box className="formContainer" sx={{ minWidth: 50 }}>
       <FormControl fullWidth>
         <InputLabel id="country-label-id">Country</InputLabel>
         <Select

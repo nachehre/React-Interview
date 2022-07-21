@@ -6,12 +6,18 @@ const Step2 = () => {
   const { prevoiusHandler, nextHandler } = useContext(AppContext);
 
   return (
-    <div>
+    <>
       <RadioButtonsGroup />
 
-      <Button onClick={prevoiusHandler}> previous</Button>
-      <Button onClick={nextHandler}> next</Button>
-    </div>
+      <div>
+        <Button onClick={prevoiusHandler} variant="contained" sx={{ ml: 1 }}>
+          previous
+        </Button>
+        <Button variant="contained" onClick={nextHandler}>
+          next
+        </Button>
+      </div>
+    </>
   );
 };
 

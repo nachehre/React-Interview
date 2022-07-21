@@ -13,11 +13,13 @@ const Step1 = () => {
   const { nextHandler } = useContext(AppContext);
 
   return (
-    <div>
+    <>
       <BasicSelect />
 
-      <Button onClick={nextHandler}> تایید مرحله ی اول</Button>
-    </div>
+      <Button variant="contained" onClick={nextHandler}>
+        Next
+      </Button>
+    </>
   );
 };
 

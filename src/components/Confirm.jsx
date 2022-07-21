@@ -1,4 +1,5 @@
 import { Button, List, ListItemText, ListItem } from "@mui/material";
+
 import { useContext } from "react";
 import { AppContext } from "../context/ContextProvider";
 const Confirm = () => {
@@ -20,7 +21,10 @@ const Confirm = () => {
           <ListItemText primary="Gender" secondary={formValueObject.gender} />
         </ListItem>
       </List>
-      <Button onClick={prevoiusHandler}> previous</Button>
+      <Button onClick={prevoiusHandler} variant="contained" sx={{ ml: 1 }}>
+        previous
+      </Button>
+      <Button variant="contained">Submit</Button>
     </div>
   );
 };
