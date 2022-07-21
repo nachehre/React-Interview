@@ -1,14 +1,36 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { AppContext } from "../context/ContextProvider";
+import { useContext, useState } from "react";
 
 export default function BasicSelect() {
-  const { formValueObject, formOnChangeHandler } = React.useContext(AppContext);
+  const iranProvinces = ["Shiraz", "Tehran", "Tabriz"];
+  const japanProvinces = ["X", "Y", "Z"];
+  const turkeyProvinces = ["R", "W", "Y"];
+  const { formValueObject, formOnChangeHandler } = useContext(AppContext);
+  const [countryState, setcountryState] = useState(formValueObject.country);
 
+  const countryHandler = (e) => {
+    setcountryState(e.target.value);
+
+    formOnChangeHandler(e);
+  };
+
+  const countryItems = (country) => {
+    switch (country) {
+      case "Iran":
+        return iranProvinces;
+      case "Japan":
+        return japanProvinces;
+      case "Turkey":
+        return turkeyProvinces;
+      default:
+        throw new Error("Unknown option");
+    }
+  };
   return (
     <Box sx={{ minWidth: 50 }}>
       <FormControl fullWidth>
@@ -18,7 +40,7 @@ export default function BasicSelect() {
           id="country"
           value={formValueObject.country}
           label="Country"
-          onChange={formOnChangeHandler}
+          onChange={countryHandler}
           name="country"
         >
           <MenuItem value="Iran">Iran</MenuItem>
@@ -36,9 +58,11 @@ export default function BasicSelect() {
           onChange={formOnChangeHandler}
           name="province"
         >
-          <MenuItem value="Tehran">Tehran</MenuItem>
-          <MenuItem value="Shiraz">Shiraz</MenuItem>
-          <MenuItem value="Qom">Qom</MenuItem>
+          {countryItems(countryState).map((item) => (
+            <MenuItem key={item} value={item}>
+              {item}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>
