@@ -1,0 +1,28 @@
+{
+  "countries": [
+    {
+      "name": "Iran",
+      "provinces": [
+        { "id": 1, "value": "Shiraz" },
+        { "id": 2, "value": "Tehran" },
+        { "id": 3, "value": "Tabriz" }
+      ]
+    },
+    {
+      "name": "Turkey",
+      "provinces": [
+        { "id": 4, "value": "X" },
+        { "id": 12, "value": "Y" },
+        { "id": 31, "value": "Z" }
+      ]
+    },
+    {
+      "name": "Japan",
+      "provinces": [
+        { "id": 11, "value": "W" },
+        { "id": 26, "value": "S" },
+        { "id": 38, "value": "R" }
+      ]
+    }
+  ]
+}
